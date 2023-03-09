@@ -1,0 +1,67 @@
+// LAYOUT
+
+.cv {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  background-color: white;
+
+  @include bp ('md') {
+    width: $cv-width-md;
+    @include m-shadow(3);
+  }
+
+  @include bp('lg') {
+    width: $cv-width-lg;
+    // width: 21cm; // A4 force format
+    // min-height: 29.7cm; // A4 force format
+    overflow: hidden;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+.cv__head {
+  background-color: $color-primary;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+
+  @include bp('lg') {
+    flex: 1 0 $aside-width;
+    @include m-shadow(3);
+    z-index: 12;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.cv__foot {
+  background-color: $color-primary;
+  color: white;
+  text-align: center;
+  padding: $gutter-half;
+
+  @include bp('lg') {
+    flex: 0 0 (100.1% - $aside-width);
+    margin-left: $aside-width;
+    box-shadow: -7cm 0 0 0 $color-gray-lighter;
+    z-index: 12;
+  }
+}
+
+.cv__main {
+  background-color: white;
+  color: $color-gray-dark;
+  flex: 1; // sticky footer
+
+  @include bp('lg') {
+    flex: 1 0 (100% - $aside-width);
+  }
+
+  strong {
+    font-weight: $fontweight-bold;
+  }
+}

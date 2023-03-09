@@ -1,0 +1,84 @@
+// User image
+
+.user__media {
+}
+
+.user__media--hero {
+  $dot-size: $gutter-quad;
+
+  position: relative;
+
+  .media {
+    // max-height: 50rem;
+    overflow: hidden;
+  }
+
+  @include bp('lg') {
+    .media {
+      position: relative;
+      height: 0;
+      padding-bottom: 141.42%;
+      max-height: none;
+      background-color: white;
+    }
+
+    .media__wrapper {
+      position: absolute;
+      width: 100%;
+      top: 0;
+      bottom: 0;
+      overflow: hidden;
+      background-color: $color-secondary;
+    }
+
+    .media__image {
+      position: absolute;
+      top: 0;
+      right: -22%;
+      max-width: 140%;
+    }
+
+    .media__image--alternate {
+      top: -12%;
+      right: -35%;
+      max-width: 160%;
+    }
+  }
+}
+
+.user__media--round {
+  $media-size: 28rem;
+
+  display: inline-block;
+  width: 100%;
+  max-width: $media-size;
+  padding: $gutter;
+  margin: $gutter 0;
+
+  .media {
+    position: relative;
+    height: 0;
+    padding-bottom: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0 0 $gutter lighten($color-primary, 15%);
+  }
+
+  .media__wrapper {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    overflow: hidden;
+    border-radius: 50%;
+    background: $color-secondary;
+    z-index: +1;
+  }
+
+  .media__image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    max-width: none;
+    max-width: 160%;
+  }
+}

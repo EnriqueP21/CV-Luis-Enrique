@@ -1,0 +1,120 @@
+/* Section - body */
+
+// Placeholders
+
+%trailing-slashes {
+
+  &:after {
+    content: " //";
+    margin-right: $gutter-quarter;
+  }
+}
+
+%headline {
+  text-transform: uppercase;
+  font-size: $fontsize-big;
+  font-weight: $fontweight-bold;
+  font-style: italic;
+}
+
+%headline--inline {
+
+  &,
+  & + * {
+    display: inline;
+  }
+}
+
+%big-strong {
+  font-size: $fontsize-big;
+  line-height: 1;
+  font-weight: $fontweight-bold;
+}
+
+
+// Section body
+
+.section__body {
+
+  article {
+    margin-bottom: $gutter;
+
+    @include bp('lg') {
+      margin-bottom: $gutter-half;
+    }
+
+    .section--tasks & {
+      margin-bottom: $gutter-half;
+    }
+  }
+
+  h3 {
+    @extend %headline;
+  }
+
+  .section--tasks &,
+  .section--tools &,
+  .section--projects-2 &,
+  .section--profile & {
+
+    h3 {
+      @extend %trailing-slashes;
+      @extend %headline--inline;
+    }
+  }
+
+  .section--projects-1 &,
+  .section--projects-3 &,
+  .section--projects-4 &,
+  .section--projects-5 & {
+
+    h3 {
+      @extend %trailing-slashes;
+    }
+  }
+
+
+
+  p + p {
+    margin-top: $gutter-half;
+  }
+
+  ul {
+    padding-left: $gutter;
+
+
+    > li {
+      position: relative;
+
+      &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0.55em;
+        left: -$gutter-third * 2;
+        width: $gutter-third;
+        height: $gutter-third;
+        background-color: currentColor;
+        transform: skewX($skew-angle);
+      }
+    }
+  }
+
+  h3 + ul {
+    margin-top: $gutter-half; // Oulala!
+  }
+}
+
+// PILLS
+
+.pill {
+  position: relative;
+  top: -0.5rem;
+  color: $color-primary;
+  font-size: $fontsize-smaller;
+  text-transform: uppercase;
+  font-style: italic;
+
+  &:before { content: "[ "; }
+  &:after { content: " ]"; }
+}

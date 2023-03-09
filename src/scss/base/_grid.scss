@@ -1,0 +1,25 @@
+// MINI-GRID
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+
+  > * {
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: 100%;
+  }
+
+  &.grid--50 > * {
+
+    @include bp('sm') {
+
+      flex-basis: 50%;
+
+      &:nth-child(odd) { padding-right: $gutter-half; }
+      &:nth-child(even) { padding-left: $gutter-half; }
+    }
+  }
+
+}

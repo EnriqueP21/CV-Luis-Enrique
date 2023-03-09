@@ -1,0 +1,49 @@
+/* Section - title */
+
+.section__title {
+  position: absolute;
+  top: 0;
+  left: -$gutter;
+  transform: translate3d(0, -50%, 0);
+  padding: $gutter-quarter $gutter-half;
+  padding-left: $gutter-double;
+
+  color: white;
+  margin: 0;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: $fontsize-bigger;
+  font-weight: $fontweight-light;
+  font-style: italic;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: skewX($skew-angle);
+    background-color: $color-secondary;
+    @include m-shadow(1);
+    z-index: -1;
+  }
+
+  .cv__head & {
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    padding: $gutter-quarter $gutter-half;
+
+    // &:before {
+    //   right: -1000px; // Flag style
+    // }
+  }
+}
+
+.section__title--simple { // BEM fuxed!
+  font-size: $fontsize-bigger;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-bottom: $gutter;
+  color: $color-gray;
+}

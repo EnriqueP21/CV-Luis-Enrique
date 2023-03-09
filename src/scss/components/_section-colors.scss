@@ -1,0 +1,52 @@
+/* Color variants */
+
+.cv__main {
+  background-color: $color-secondary;
+}
+
+%bg--white {
+  background-color: white;
+  color: $color-gray-dark;
+
+  h3 {
+    color: $color-primary;
+  }
+}
+
+%bg--primary {
+  background-color: $color-primary;
+  color: white;
+
+  h3 {
+    color: $color-secondary;
+  }
+}
+
+%bg--secondary {
+  background-color: $color-secondary;
+  color:white;
+
+  h3 {
+    color: $color-primary;
+  }
+
+  a {
+    color: $color-primary;
+
+    &:hover {
+      color: $color-primary-light;
+      border-color: $color-primary-light;
+    }
+  }
+}
+
+.section--tasks { @extend %bg--secondary; }
+.section--tools { @extend %bg--primary; }
+.section--timeline { @extend %bg--white; }
+.section--profile { @extend %bg--secondary; }
+
+.section--projects-1 { @extend %bg--white; }
+.section--projects-2 { @extend %bg--primary; }
+.section--projects-3 { @extend %bg--white; }
+.section--projects-4 { @extend %bg--secondary; }
+.section--projects-5 { @extend %bg--white; }

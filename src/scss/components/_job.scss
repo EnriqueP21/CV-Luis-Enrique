@@ -1,0 +1,19 @@
+// User job
+
+.user__job {
+  margin-bottom: 0;
+  margin-top: $gutter-and-half;
+  font-weight: $fontweight-light;
+  line-height: 1;
+
+  @include bp('sm') { margin-top: $gutter; }
+  @include bp('lg') { font-size: $fontsize-huge; }
+}
+
+.section.user-title {
+  position: relative;
+  padding-top: $gutter-double;
+  padding-bottom: $gutter-double;
+
+  @include bp('sm') { padding-bottom: $gutter-and-half; }
+}

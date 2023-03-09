@@ -1,0 +1,122 @@
+// BOX MODEL
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+// MAIN STYLES
+
+html, body {
+  min-height: 100vh; // Full height viewport
+}
+
+html {
+  font-size: $pixels-per-rem * 1px; // Default: 10px
+}
+
+body {
+	font-family: $fontfamily-base;
+	font-size: $fontsize-base;
+	line-height: $lineheight-base;
+
+  -webkit-font-smoothing: antialiased; // Does it help?
+
+  @include bp ('md') {
+    // Supaflex centered cv :)
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    // Vertical padding
+    padding: $gutter-double 0;
+
+    // Background enlightment
+    $bodybg-pattern-size: 0.5em;
+    $bodybg-pattern-intensity: 0.05em;
+
+    background-color: $color-gray-dark;
+    background-image:
+    repeating-linear-gradient(
+    90deg - $skew-angle,
+    transparent,
+    transparent $bodybg-pattern-size,
+    rgba(0,0,0,$bodybg-pattern-intensity) $bodybg-pattern-size,
+    rgba(0,0,0,$bodybg-pattern-intensity) 2 * $bodybg-pattern-size
+    ),
+    radial-gradient(ellipse farthest-corner, $color-secondary-lighter, $color-gray-darkest)
+    ;
+  }
+
+	@include bp ('lg') {
+	}
+}
+
+// Links
+
+a {
+  $link-color--hover: lighten($color-secondary, 20%);
+
+  color: $color-secondary;
+  font-weight: $fontweight-bold;
+  font-style: italic;
+  text-decoration: none;
+  border-bottom: 2px dotted transparent;
+  transition: all 0.25s;
+
+  &:hover {
+    color: $link-color--hover;
+    border-color: $link-color--hover;
+  }
+}
+
+// Headings
+
+h1 {
+  font-size: $fontsize-h1;
+  line-height: 0.9;
+  font-weight: $fontweight-light;
+  text-transform: uppercase;
+  font-style: italic;
+}
+
+h2 {
+  font-size: $fontsize-h2;
+  line-height: 1.25;
+  font-weight: $fontweight-light;
+}
+
+h3 {
+  font-size: $fontsize-h3;
+  line-height: 1.25;
+  font-weight: $fontweight-base;
+  text-transform: uppercase;
+  color: $color-gray;
+}
+
+// Images
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+// List
+
+ul {
+  padding-left: 0;
+}
+
+li {
+  margin-bottom: $gutter-half;
+  list-style-type: none;
+}
+
+// Paragraphs
+
+p {
+  margin-bottom: $gutter;
+}
+
+em {
+  font-style: italic;
+}

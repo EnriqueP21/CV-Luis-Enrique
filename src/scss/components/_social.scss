@@ -1,0 +1,59 @@
+// SOCIAL
+
+.socials {
+}
+
+.social {
+  border: none;
+  $social-icon-size: 6rem;
+
+  position: relative;
+  min-height: $social-icon-size;
+  margin-bottom: $gutter-half;
+
+  display: block;
+
+  &:hover {
+  }
+
+  .social__icon {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d( -50%, -60%, 0);
+    width: $social-icon-size;
+    height: $social-icon-size;
+    font-size: $social-icon-size;
+    line-height: 1;
+    text-align: center;
+    font-family: "FontAwesome";
+
+    fill: $color-secondary;
+  }
+
+  span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d( -50%, -50%, 0);
+    padding: $gutter-quarter / 2 $gutter-half;
+    background-color: white;
+    line-height: 1;
+    font-style: italic;
+    color: white;
+
+    &:before { // skewed bg
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      transform: skewX($skew-angle);
+      background-color: $color-secondary;
+      z-index: -1;
+    }
+  }
+}

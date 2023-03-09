@@ -1,0 +1,13 @@
+// CONTACT
+
+.contact {
+
+  > * {
+    display: block;
+    margin-bottom: $gutter * 0.75;
+    font-style: italic;
+   }
+}
+
+.contact__phone { font-size: $fontsize-big; }
+.adress__country { text-transform: uppercase; }

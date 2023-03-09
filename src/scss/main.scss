@@ -1,0 +1,35 @@
+/******************************************************************************
+ *
+ * MAIN SCSS FILE
+ *
+ ******************************************************************************/
+
+ // Config
+ @import "variables";
+
+// Reset
+@import "base/reset";
+
+// Base
+@import "base/mixins";
+@import "base/base";
+@import "base/grid";
+@import "base/layout";
+
+// UI Components
+@import "components/section";
+@import "components/section-title";
+@import "components/section-body";
+@import "components/section-colors";
+
+@import "components/avatar";
+@import "components/name";
+@import "components/job";
+@import "components/status";
+@import "components/social";
+@import "components/contact";
+
+@import "components/timeline";
+
+// Print
+@import "base/print";

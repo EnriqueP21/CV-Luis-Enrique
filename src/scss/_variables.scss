@@ -1,0 +1,116 @@
+////////////////////////////////////////////////////////////////////////////////
+// CONFIGURATION
+
+// Layout
+
+$breakpoints: (
+                            'sm': 30em, // 480px
+                            'md': 45em, // 720px,
+                            'lg': 60em // 960px
+) !default;
+
+$cv-width-md:               40em; // Tablet document width
+$cv-width-lg:               54em; // Desktop document width
+$aside-width:               29% !default; // Width of the left column
+
+$skew-angle:                -7deg !default; // Skew elements use this angle
+
+// Palette colors
+
+$color-primary:             #EE5722 !default;
+$color-secondary:           #2d3e4e !default;
+
+$color-gray-darkest:        #111 !default;
+$color-gray-darker:         #222 !default;
+$color-gray-dark:           #444 !default;
+$color-gray:                #888 !default;
+$color-gray-light:          #aaa !default;
+$color-gray-lighter:        #eee !default;
+
+// Type
+
+$pixels-per-rem:            10 !default; // Kind of global zoom
+
+$fontsize-base:             1.6rem !default;
+$fontsize-base-print:       1.4rem !default;
+
+$lineheight-base:           1.5 !default;
+
+$fontsize-small:            1.4rem !default;
+$fontsize-smaller:          1.2rem !default;
+$fontsize-big: 	            1.8rem !default;
+$fontsize-bigger:           2.0rem !default;
+$fontsize-biggest:          2.4rem !default;
+$fontsize-huge:             3.0rem !default;
+$fontsize-huger:            3.6rem !default;
+$fontsize-giant:            4.0rem !default;
+
+$fontsize-h1:  			        $fontsize-giant !default;
+$fontsize-h2:  			        $fontsize-huger !default;
+$fontsize-h3:  			        $fontsize-bigger !default; // 20px
+
+// $fontweight-hair:           100 !default;
+$fontweight-light:          300 !default; // normal & italic
+$fontweight-base:           400 !default; // normal (body default) & italic
+// $fontweight-semibold:       500 !default;
+$fontweight-bold:           900 !default; // italic
+// $fontweight-book:           900 !default;
+
+$fontfamily-base:           'Roboto' !default;
+// $fontfamily-base:           'Raleway'; // Wider than Roboto
+// $fontfamily-base:           'Montserrat'; // A bit bolder, but too wide
+$fontfamily-base:           'Lato'; // Very compact, could fit with a 900 bold
+
+$fontfamily-alt:            'InCaseOf' !default;
+
+// CDN fonts
+// => https://fonts.google.com/?category=Sans+Serif&stylecount=7
+
+// @import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700i');
+// @import url('https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700i');
+// @import url('https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,700i');
+@import url('https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,900i');
+
+// @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
+
+// Timeline
+
+$timeline-item-size: $fontsize-big;
+$timeline-dot-size: $fontsize-big * 1;
+$timeline-line-size: $timeline-dot-size / 5;
+
+$timeline-tips-size: $timeline-dot-size;
+$timeline-tree-size: $timeline-dot-size * 2;
+
+
+////////////////////////////////////////////////////////////////////////////////
+// COMPUTED
+// /!\ Don't edit below unless you know the game! /!\
+
+// Gutter
+
+$gutter:                    $fontsize-base * $lineheight-base;
+$gutter-in-px:              round($gutter * $pixels-per-rem / 1rem);
+
+$gutter-half:		            $gutter / 2;
+$gutter-third:	            $gutter / 3;
+$gutter-quarter:	          $gutter / 4;
+$gutter-and-half:		        $gutter * 1.5;
+$gutter-double:		          $gutter * 2;
+$gutter-quad:		            $gutter * 4;
+
+// Palette
+
+$color-primary-darkest:     mix($color-primary, black, 33.33%);
+$color-primary-darker:      mix($color-primary, black, 50%);
+$color-primary-dark:        mix($color-primary, black, 66.67%);
+$color-primary-light:       mix($color-primary, white, 66.67%);
+$color-primary-lighter:     mix($color-primary, white, 50%);
+$color-primary-lightest:    mix($color-primary, white, 33.33%);
+
+$color-secondary-darkest:   mix($color-secondary, black, 33.33%);
+$color-secondary-darker:    mix($color-secondary, black, 50%);
+$color-secondary-dark:      mix($color-secondary, black, 66.67%);
+$color-secondary-light:     mix($color-secondary, white, 66.67%);
+$color-secondary-lighter:   mix($color-secondary, white, 50%);
+$color-secondary-lightest:  mix($color-secondary, white, 33.33%);

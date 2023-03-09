@@ -1,0 +1,92 @@
+/* TIMELINE */
+
+.section--timeline {
+
+  h3 {
+
+    span:nth-child(2) {
+      @extend %trailing-slashes;
+    }
+
+    span:nth-child(3) {
+      color: $color-gray;
+      font-weight: $fontweight-base;
+    }
+  }
+}
+
+
+.timeline {//background-color: gray;
+  position: relative;
+  padding-top: $gutter;
+  margin-left: 0;
+  padding-left: $timeline-tree-size / 2;
+  box-shadow: inset $timeline-line-size / 2 0 0 0 $color-primary,
+    - $timeline-line-size / 2 0 0 0 $color-primary;
+
+  .timeline__icon {
+    position: absolute;
+    left: - ($timeline-dot-size + $timeline-line-size) / 2;
+    left: - $timeline-dot-size / 2;
+    width: $timeline-tips-size;
+    height: $timeline-tips-size;
+
+    fill: $color-primary; // base svg fill
+  }
+
+  .timeline__icon--top {
+    top: -$timeline-tips-size / 2;
+  }
+
+  .timeline__icon--bottom {
+    bottom: -$timeline-tips-size/*/ 2*/; // hacky: move it down not the line to show thru
+  }
+
+  .timeline__item {
+    margin-bottom: $gutter;
+
+    > *:first-child {
+      position: relative;
+      padding-top: ($timeline-dot-size - $timeline-item-size);  // vert center
+      margin-bottom: $gutter-half;
+      line-height: 1;
+      font-size: $timeline-item-size;
+
+      &:before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        left: - ($timeline-tree-size + $timeline-dot-size) / 2;
+        width: $timeline-dot-size;
+        height: $timeline-dot-size;
+        background-color: white;
+        border-radius: 50%;
+        box-shadow: inset 0 0 0 $timeline-line-size $color-primary
+      }
+    }
+
+    h3 {
+      margin-top: 0;
+    }
+  }
+
+  .date-range {
+    color: tomato;
+    display: block;
+    margin-bottom: $gutter-quarter;
+    font-weight: $fontweight-bold;
+    font-style: italic;
+    letter-spacing: -0.2rem;
+    line-height: 1;
+    color: $color-secondary-lighter;
+
+    @include bp('lg') {
+      margin-bottom: 0;
+      // padding: $gutter-quarter;
+      float: right;
+      margin-top: - ($timeline-dot-size - $timeline-item-size);  // vert center
+    }
+  }
+
+}

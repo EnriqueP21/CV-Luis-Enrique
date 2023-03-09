@@ -1,0 +1,53 @@
+/* SECTION */
+
+
+/* Section - general */
+
+.section {
+  position: relative;
+  padding: $gutter-and-half $gutter;
+
+  @include bp('lg') {
+    .cv__main {
+      &:first-child { padding-top: $gutter; } // No title for the first section
+      &:last-child { padding-bottom: 0; } // No title in next section
+    }
+  }
+}
+
+.user__social {
+  padding-bottom: 0;
+
+  @include bp('sm') {
+    padding-bottom: $gutter-and-half;
+  }
+
+  @include bp('lg') {
+     // Compact mode on desktop
+    padding-bottom: 0;
+    // Reset grid on desktop
+    padding-right: $gutter !important;
+  }
+}
+
+.user__contact {
+
+  @include bp('lg') {
+    // Compact mode on desktop
+    padding-top: 0;
+    // Reset grid on desktop
+    padding-left: $gutter !important;
+  }
+}
+
+// METAS
+
+.user__metas {
+  flex: 1;
+  align-content: flex-start;
+  background-color: white;
+  color: $color-gray;
+
+  @extend .grid;
+  @extend .grid--50;
+}
